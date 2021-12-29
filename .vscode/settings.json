@@ -1,7 +1,10 @@
 {  
     "emmet.includeLanguages": {
       "javascript": "javascriptreact",
-      "html": "html"
+      "html": "html",
+      "css": "css"
     },
-      "emmet.triggerExpansionOnTab": true
+      "emmet.triggerExpansionOnTab": true,
+      "terminal.integrated.experimentalUseTitleEvent": true,
+      "terminal.integrated.macOptionIsMeta": true
 }
