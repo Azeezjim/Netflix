@@ -8,7 +8,7 @@ import * as ROUTES from '../constances/roustes';
 
 export default function SignUp() {
   const history = useHistory();
-  const firebase = useContext(FirebaseContext);
+  const {firebase} = useContext(FirebaseContext);
 
   const [firstName, setFirstName] = useState('');
   const [emailAddress, setEmailAddress] = useState('');

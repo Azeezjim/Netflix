@@ -8,7 +8,7 @@ import { FirebaseContext } from './context/firebase';
 
 render(
   <React.StrictMode>
-    <FirebaseContext.Provider vakue={{ firebase }}>
+    <FirebaseContext.Provider value={{ firebase }}>
       <GlobalStyles />
       <App />
     </FirebaseContext.Provider>
