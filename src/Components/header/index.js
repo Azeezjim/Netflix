@@ -5,13 +5,13 @@ import { Background, Group, Profile, Picture, Link, Feature, Dropdown, FeatureCa
 export default function Header({ bg = true, children, ...restProps }) {
   return bg ? <Background {...restProps}>{children}</Background> : children;
 }
-
+   
 Header.Feature = function HeaderFeature({ children, ...restPropds }) {
   return <Feature {...restPropds}>{children}</Feature>;
 };
 
 Header.Group = function HeaderGroup({ children, ...restPropds }) {
-  return <Group {...restPropds}>{children}</Group>;
+  return <Group {...restPropds}>{children}</Group>; 
 };
 
 Header.Picture = function HeaderPicture({ src, ...restPropds }) {
