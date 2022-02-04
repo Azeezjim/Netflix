@@ -4,7 +4,7 @@ import { FirebaseContext } from "../context/firebase";
 import {Loading, Header} from '../Components';
 import * as ROUTES from '../constances/roustes';
 import logo from '../logo.svg';
-
+// export
 export default function  BrowsContainer({ slides }) {
     const [profile, setProfile] = useState({});
     const [loading, setLoading] = useState(true); 
