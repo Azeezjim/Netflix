@@ -4,10 +4,11 @@ import { FirebaseContext } from "../context/firebase";
 import {Loading, Header} from '../Components';
 import * as ROUTES from '../constances/roustes';
 import logo from '../logo.svg';
-// export
+
 export default function  BrowsContainer({ slides }) {
     const [profile, setProfile] = useState({});
     const [loading, setLoading] = useState(true); 
+    const [searchTerm, setSearchTerm] = useState();
     const { firebase } = useContext(FirebaseContext); 
     const user = firebase.auth().currentUser || {};
   
@@ -29,6 +30,10 @@ export default function  BrowsContainer({ slides }) {
                             <Header.TextLink>Films</Header.TextLink>
                         </Header.Group>
                         <Header.Group>
+                        <Header.Search 
+                                searchTerm ={searchTerm} 
+                                setSearchTerm={setSearchTerm} 
+                            >
                             <Header.Profile>
                                 <Header.Picture src={user.photoURL} />
                                 <Header.Dropdown>
