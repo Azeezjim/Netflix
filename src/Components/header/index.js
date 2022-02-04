@@ -1,4 +1,4 @@
- import React from 'react';
+ import React, {useState} from 'react';
 import { Link as ReactRouterLink } from 'react-router-dom';
 import { Background, Group, Profile, Picture, Link, Feature, Dropdown, FeatureCallOut, Text,  ButtonLink, Container, Logo } from './styles/header';
 
@@ -17,6 +17,10 @@ Header.Group = function HeaderGroup({ children, ...restPropds }) {
 Header.Picture = function HeaderPicture({ src, ...restPropds }) {
   return <Picture {...restPropds} src={`/images/users/${src}.png `}/>
 };
+
+Header.Search = function headerSearch({SearchTerm, setSearchTerm, ...restProps}) {
+  const [searchActive]
+}
 
 Header.Profile = function HeaderProfile({ children, ...restPropds }) {
   return <Profile {...restPropds}>{children}</Profile>;
