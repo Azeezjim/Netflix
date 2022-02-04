@@ -1,6 +1,6 @@
  import React, {useState} from 'react';
 import { Link as ReactRouterLink } from 'react-router-dom';
-import { Background, Group, Profile, Picture, Link, Feature, Dropdown, FeatureCallOut, Text,  ButtonLink, Container, Logo, SearchIcon, Search } from './styles/header';
+import { Background, Group, Profile, Picture, Link, Feature, Dropdown, FeatureCallOut, Text,  ButtonLink, Container, Logo, SearchIcon, Search, SearchInput } from './styles/header';
 
 export default function Header({ bg = true, children, ...restProps }) {
   return bg ? <Background {...restProps}>{children}</Background> : children;
