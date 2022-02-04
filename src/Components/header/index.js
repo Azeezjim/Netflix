@@ -25,7 +25,7 @@ Header.Search = function headerSearch({SearchTerm, setSearchTerm, ...restProps})
       <SearchIcon onClick={() => setSearchActive ((searchActive) => !searchActive)} >
         <img src="/images/icons/search.png" />
       </SearchIcon>
-      <chInput 
+      <SearchInput 
       value={searchTerm} 
       onChange={({terget}) => setSearchTerm(terget.value) } 
       placeholder= 'Search film or series' 
