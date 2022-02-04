@@ -19,7 +19,12 @@ Header.Picture = function HeaderPicture({ src, ...restPropds }) {
 };
 
 Header.Search = function headerSearch({SearchTerm, setSearchTerm, ...restProps}) {
-  const [searchActive]
+  const [searchActive, setSearchActive] = useState(false);
+  return(
+    <search {...restProps}>
+      <searchItem onClick={() => setSearchActive}></searchItem>(searchActive => !searchActive)
+    </search>
+  )
 }
 
 Header.Profile = function HeaderProfile({ children, ...restPropds }) {
