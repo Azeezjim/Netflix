@@ -1,6 +1,6 @@
  import React, {useState} from 'react';
 import { Link as ReactRouterLink } from 'react-router-dom';
-import { Background, Group, Profile, Picture, Link, Feature, Dropdown, FeatureCallOut, Text,  ButtonLink, Container, Logo } from './styles/header';
+import { Background, Group, Profile, Picture, Link, Feature, Dropdown, FeatureCallOut, Text,  ButtonLink, Container, Logo, SearchIcon } from './styles/header';
 
 export default function Header({ bg = true, children, ...restProps }) {
   return bg ? <Background {...restProps}>{children}</Background> : children;
@@ -22,8 +22,16 @@ Header.Search = function headerSearch({SearchTerm, setSearchTerm, ...restProps})
   const [searchActive, setSearchActive] = useState(false);
   return(
     <search {...restProps}>
-      <searchItem onClick={() => setSearchActive}></searchItem>(searchActive => !searchActive)
+      <SearchIcon onClick={() => setSearchActive ((searchActive) => !searchActive)} >
+        <img src="/images/icons/search.png" />
+      </SearchIcon>
+      <chInput 
+      value={searchTerm} 
+      onChange={({terget}) => setSearchTerm(Terget.value) } 
+      placeholder= 'Search film or series' 
+      active= {searchActive} />
     </search>
+    
   )
 }
 
