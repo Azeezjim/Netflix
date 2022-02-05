@@ -25,7 +25,7 @@ export const FeatureTitle = styled(Title)`
 
 `;
 
-export const FeatureText = styled(Title)`
+export const FeatureText = styled.p`
 
 `;
 
@@ -45,6 +45,13 @@ export const Meta = styled.div`
 
 `;
 
-export const Feature = styled.div`
+export const Entities = styled.div`
+
+`;
+export const Item = styled.div`
+
+`;
+
+export const Image = styled.img`
 
 `;
