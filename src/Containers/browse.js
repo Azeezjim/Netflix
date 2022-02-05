@@ -58,6 +58,7 @@ export default function  BrowsContainer({ slides }) {
                             City. Arthur wears two masks -- the one he paints for his day job as a clown, and the guise he projects in a
                             futile attempt to feel lik   e he's part of the world around him.   
                         </Header.Text>
+                        <Header.Playbutton>Play</Header.Playbutton>
                     </Header.Feature>
                  </Header>
         </>
