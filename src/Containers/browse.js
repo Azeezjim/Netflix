@@ -32,8 +32,18 @@ export default function  BrowsContainer({ slides }) {
                     <Header.Frame>
                         <Header.Group>
                             <Header.Logo to={ROUTES.HOME} src={logo} alt='Netflix' />
-                            <Header.TextLink  active = { catgory === 'series' ? 'true' : 'false'} >Series</Header.TextLink>
-                            <Header.TextLink>Films</Header.TextLink>
+                            <Header.TextLink  
+                                active = { catigory === 'series' ? 'true' : 'false'} 
+                                onClick={() => setCatigory('series') } 
+                                > 
+                                    Series
+                            </Header.TextLink>
+                            <Header.TextLink
+                                active = { catigory === 'films ' ? 'true' : 'false'} 
+                                onClick={() => setCatigory('films ') } 
+                            >
+                                Films
+                            </Header.TextLink>
                         </Header.Group>
                         <Header.Group>
                         <Header.Search 
