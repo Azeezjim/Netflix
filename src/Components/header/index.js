@@ -18,12 +18,12 @@ Header.Picture = function HeaderPicture({ src, ...restPropds }) {
   return <Picture {...restPropds} src={`/images/users/${src}.png `}/>
 };
 
-Header.Search = function headerSearch({SearchTerm, setSearchTerm, ...restProps}) {
+Header.Search = function HeaderSearch({searchTerm, setSearchTerm, ...restProps}) {
   const [searchActive, setSearchActive] = useState(false);
   return(
     <Search {...restProps}>
       <SearchIcon onClick={() => setSearchActive ((searchActive) => !searchActive)} >
-        <img src="/images/icons/search.png" />
+        <img src="/images/icons/search.png" alt="search" />
       </SearchIcon>
       <SearchInput 
       value={searchTerm} 

@@ -33,7 +33,7 @@ export default function  BrowsContainer({ slides }) {
                         <Header.Search 
                                 searchTerm ={searchTerm} 
                                 setSearchTerm={setSearchTerm} 
-                            >
+                            />
                             <Header.Profile>
                                 <Header.Picture src={user.photoURL} />
                                 <Header.Dropdown>
