@@ -1,7 +1,7 @@
 import React, {  useState, useContext, useEffect} from "react";
 import {SelectProfileContainer} from "./profiles";
 import { FirebaseContext } from "../context/firebase";
-import {Loading, Header} from '../Components';
+import {Loading, Header, Card} from '../Components';
 import * as ROUTES from '../constances/roustes';
 import logo from '../logo.svg';
 
@@ -61,6 +61,9 @@ export default function  BrowsContainer({ slides }) {
                         <Header.PlayButton>Play</Header.PlayButton>
                     </Header.Feature>
                  </Header>
+                 <Card.Group>
+
+                 </Card.Group>
         </>
                  ) : (
                  <SelectProfileContainer user=
