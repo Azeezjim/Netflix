@@ -6,6 +6,7 @@ import * as ROUTES from '../constances/roustes';
 import logo from '../logo.svg';
 
 export default function  BrowsContainer({ slides }) {
+    const [catigory, setCatigory]
     const [profile, setProfile] = useState({});
     const [loading, setLoading] = useState(true); 
     const [searchTerm, setSearchTerm] = useState();
