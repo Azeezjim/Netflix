@@ -33,6 +33,22 @@ Card.Text = function CardText ({children, ...restProps}) {
     return <Text {...restProps}>{children}</Text>
 };
 
+Card.Meta = function CardMeta ({children, ...restProps}) {
+    return <Meta {...restProps}>{children}</Meta>
+};
 
+Card.Item = function CardItem ({item,  children, ...restProps}) {;
 
+    return <Item 
+        onClick={() => {
+            setItemFeature(item);
+            setShowFeature(true);
+    }}
+
+    {...restProps}>{children}</Item>
+};
+
+Card.Title = function CardTitle ({...restProps}) {
+    return <Title {...restProps}>{children}</Title>
+};
 
