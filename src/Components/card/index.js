@@ -42,7 +42,7 @@ Card.Meta = function CardMeta ({children, ...restProps}) {
     return <Meta {...restProps}>{children}</Meta>
 };
 
-Card.Item = function CardItem ({item,  children, ...restProps}) {;
+Card.Item = function CardItem ({item,  children, ...restProps, setItemFeature, setShowFeature}) {;
 
     return <Item 
         onClick={() => {

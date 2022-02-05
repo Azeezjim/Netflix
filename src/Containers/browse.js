@@ -6,11 +6,12 @@ import * as ROUTES from '../constances/roustes';
 import logo from '../logo.svg';
 
 export default function  BrowsContainer({ slides }) {
-    const [catigory, setCatigory]
+    const [catigory, setCatigory] = useState('series'); 
     const [profile, setProfile] = useState({});
     const [loading, setLoading] = useState(true); 
     const [searchTerm, setSearchTerm] = useState();
-    const { firebase } = useContext(FirebaseContext); 
+    const { firebase } = useContext(FirebaseContext);
+    const [slideRow, setSlideRow ] = useState([]);
     const user = firebase.auth().currentUser || {};
   
     useEffect(() => {
@@ -18,6 +19,10 @@ export default function  BrowsContainer({ slides }) {
              setLoading(false);
          }, 3000);
         }, [profile.displayName]);
+
+        useEffect(() => {
+            setSlideRow(slides[catigory])
+            }, [slides, catigory,])
     return profile.displayName ? (
         <>
             {loading ? 
@@ -27,7 +32,7 @@ export default function  BrowsContainer({ slides }) {
                     <Header.Frame>
                         <Header.Group>
                             <Header.Logo to={ROUTES.HOME} src={logo} alt='Netflix' />
-                            <Header.TextLink>Series</Header.TextLink>
+                            <Header.TextLink  active = { catgory === 'series' ? 'true' : 'false'} >Series</Header.TextLink>
                             <Header.TextLink>Films</Header.TextLink>
                         </Header.Group>
                         <Header.Group>
