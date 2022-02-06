@@ -11,7 +11,7 @@ export default function  BrowsContainer({ slides }) {
     const [loading, setLoading] = useState(true); 
     const [searchTerm, setSearchTerm] = useState();
     const { firebase } = useContext(FirebaseContext);
-    const [slideRow, setSlideRow ] = useState([]);
+    const [slideRows, setSlideRow ] = useState([]);
     const user = firebase.auth().currentUser || {};
   
     useEffect(() => {
@@ -78,7 +78,11 @@ export default function  BrowsContainer({ slides }) {
                     </Header.Feature>
                  </Header>
                  <Card.Group>
-
+                 { slideRows.map ((slideItem)=> {
+                     <Card key={`${catigory}-${slideItem.title.toLowerCase}`}>
+                         <Card.Title>{slideItem.title}</Card.Title>
+                     </Card>
+                 })}
                  </Card.Group>
         </>
                  ) : (
