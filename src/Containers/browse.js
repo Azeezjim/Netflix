@@ -6,7 +6,7 @@ import * as ROUTES from '../constances/roustes';
 import logo from '../logo.svg';
 
 export default function  BrowsContainer({ slides }) {
-    const [catigory, setCatigory] = useState('series'); 
+    const [category, setCategory] = useState('series'); 
     const [profile, setProfile] = useState({});
     const [loading, setLoading] = useState(true); 
     const [searchTerm, setSearchTerm] = useState();
@@ -21,8 +21,8 @@ export default function  BrowsContainer({ slides }) {
         }, [profile.displayName]);
 
         useEffect(() => {
-            setSlideRow(slides[catigory])
-            }, [slides, catigory,])
+            setSlideRow(slides[category])
+            }, [slides, category,])
     return profile.displayName ? (
         <>
             {loading ? 
@@ -33,14 +33,14 @@ export default function  BrowsContainer({ slides }) {
                         <Header.Group>
                             <Header.Logo to={ROUTES.HOME} src={logo} alt='Netflix' />
                             <Header.TextLink  
-                                active = { catigory === 'series' ? 'true' : 'false'} 
-                                onClick={() => setCatigory('series') } 
+                                active = { category === 'series' ? 'true' : 'false'} 
+                                onClick={() => setCategory('series') } 
                                 > 
                                     Series
                             </Header.TextLink>
                             <Header.TextLink
-                                active = { catigory === 'films ' ? 'true' : 'false'} 
-                                onClick={() => setCatigory('films ') } 
+                                active = { category === 'films ' ? 'true' : 'false'} 
+                                onClick={() => setCategory('films ') } 
                             >
                                 Films
                             </Header.TextLink>
@@ -79,13 +79,13 @@ export default function  BrowsContainer({ slides }) {
                  </Header>
                  <Card.Group>
                  { slideRows.map((slideItem) => (
-                     <Card key={`${catigory}-${slideItem.title.toLowerCase()}`}>
+                     <Card key={`${category}-${slideItem.title.toLowerCase()}`}>
                          <Card.Title>{slideItem.title}</Card.Title>
                          <Card.Entities>
                              {slideItem.data.map((item) => (
-                                 <Card.ITem key={item.data} item={item}>
-                                     <Card.Image src={`/images/${catigory}/${item.gonra}/${item.slog}`}
-                                 </Card.ITem>}
+                                 <Card.Item key={item.data} item={item}>
+                                     <Card.Image src={`/images/${category}/${item.genre}/${item.slug}/small.jpg`}/>
+                                 </Card.Item>
                              ))}
                          </Card.Entities>
                      </Card>
