@@ -60,6 +60,9 @@ Card.Feature = function CardFeature ({children, catigory, ...restProps}) {
             <Maturity rating={itemFeature.maturity}>
                 {itemFeature.maturity < 12 ? "PG" : itemFeatur.maturity}
             </Maturity>
+            <FeatureText fontWeight="bold">
+                {itemFeature.genre.charAt(0).toUpperCase() = itemFeature.genre.slize(1)}
+            </FeatureText>
         </Group>
     </Feature>
 };
