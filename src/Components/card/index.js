@@ -51,8 +51,14 @@ Card.Feature = function CardFeature ({children, catigory, ...restProps}) {
     >
         <COntent>
             <FeatureTitle>{itemFeature.Title}</FeatureTitle>
-            <FeatureTitle>{itemFeature.Title}</FeatureTitle>
+            <FeatureText>{itemFeature.Title}</FeatureText>
+            <FeatureClose onClick={() => setShowFeature(false)}>
+                <img src="/images/icons/close.png" alt="Close" />
+            </FeatureClose>
         </COntent>
+        <Group margin="30 0" flexDirection="row" alignItem="center">
+            <Maturity rating={itemFeature.maturity}></Maturity>
+        </Group>
     </Feature>
 };
 
