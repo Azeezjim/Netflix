@@ -14,6 +14,7 @@ export const Inner = styled.div`
   padding: 70px 45px;
   flex-direction: column;
   max-width: 815px;
+  
   margin: auto;
 `;
 

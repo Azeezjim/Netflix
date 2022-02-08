@@ -11,25 +11,28 @@ export default function  BrowsContainer({ slides }) {
     const [loading, setLoading] = useState(true); 
     const [searchTerm, setSearchTerm] = useState();
     const { firebase } = useContext(FirebaseContext);
-    const [slideRows, setSlideRow ] = useState([]);
+    const [slideRows, setSlideRows ] = useState([]);
     const user = firebase.auth().currentUser || {};
   
     useEffect(() => {
-         setTimeout(() => {
-             setLoading(false);
-         }, 3000);
+        setTimeout(() => {
+            setLoading(false);
+        }, 3000);
         }, [profile.displayName]);
 
         useEffect(() => {
-            setSlideRow(slides[category])
-            }, [slides, category,])
+            setSlideRows(slides[category])
+            }, [slides, category,]);
+
+            console.log('slideRows' , slideRows);
+            
     return profile.displayName ? (
         <>
             {loading ? 
-                 <Loading src={user.photoURL} /> :  <Loading.ReleaseBody />
-                 }
-                 <Header src="joker1" dontShowOnSmallViewPort>
-                    <Header.Frame>
+                <Loading src={user.photoURL} /> :  <Loading.ReleaseBody />
+                }
+                <Header src="joker1" dontShowOnSmallViewPort>
+                <Header.Frame>
                         <Header.Group>
                             <Header.Logo to={ROUTES.HOME} src={logo} alt='Netflix' />
                             <Header.TextLink  
@@ -76,24 +79,24 @@ export default function  BrowsContainer({ slides }) {
                         </Header.Text>
                         <Header.PlayButton>Play</Header.PlayButton>
                     </Header.Feature>
-                 </Header>
-                 <Card.Group>
-                 { slideRows.map((slideItem) => (
-          <Card key={`${category}-${slideItem.title.toLowerCase()}`}>
-          <Card.Title>{slideItem.title}</Card.Title>
-                         <Card.Entities>
-                             {slideItem.data.map((item) => (
-                                 <Card.Item key={item.data} item={item}>
-                                     <Card.Image src={`/images/${category}/${item.genre}/${item.slug}/small.jpg`}/>
-                                 </Card.Item>
-                             ))}
-                         </Card.Entities>
-                     </Card>
-                 ))}
-                 </Card.Group>
+                </Header>
+                <Card.Group>
+                    { slideRows.map((slideItem) => (
+                    <Card key={`${category}-${slideItem.titles.toLowerCase()}`}>
+                    <Card.Title>{slideItem.title}</Card.Title>
+                    <Card.Entities> 
+                            {slideItem.data.map((item) => (
+                                <Card.Item key={item.data} item={item}>
+                                    <Card.Image src={`/images/${category}/${item.genre}/${item.slug}/small.jpg`}/>
+                                </Card.Item>
+                            ))}
+                    </Card.Entities>
+                    </Card>
+                ))}
+                </Card.Group>
         </>
-                 ) : (
-                 <SelectProfileContainer user=
+                ) : (
+                <SelectProfileContainer user=
             {user} setProfile={setProfile} />
-                 );
+                );
 }      
