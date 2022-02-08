@@ -57,7 +57,9 @@ Card.Feature = function CardFeature ({children, catigory, ...restProps}) {
             </FeatureClose>
         </COntent>
         <Group margin="30 0" flexDirection="row" alignItem="center">
-            <Maturity rating={itemFeature.maturity}></Maturity>
+            <Maturity rating={itemFeature.maturity}>
+                {itemFeature.maturity < 12 ? "PG" : itemFeatur.maturity}
+            </Maturity>
         </Group>
     </Feature>
 };
