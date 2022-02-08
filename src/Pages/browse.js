@@ -6,7 +6,7 @@ import  selectionFilter  from '../utils/selection-filter';
 export default function Browse() {
   // Series and movies
   const { series } = useContent('series')
-  const { films} = useContent('films')
+  const { films } = useContent('films')
 
   
   // seides

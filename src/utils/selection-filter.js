@@ -3,49 +3,49 @@
         series: [
             {
                 titles: "Documentaries",
-                data: series?.filter((item) => item.grnra=== 'documentaries' )
+                data: series?.filter((item) => item.genre=== 'documentaries' )
             },
             {
                 titles: "Comedies ",
-                data: series?.filter((item) => item.grnra=== 'comedies'  )
+                data: series?.filter((item) => item.genre=== 'comedies'  )
             },
             {
                 titles: "Children",
-                data: series?.filter((item) => item.grnra=== 'children')
+                data: series?.filter((item) => item.genre=== 'children')
             },
             {
                 titles: "Crime ",
-                data: series?.filter((item) => item.grnra=== 'crime'  )
+                data: series?.filter((item) => item.genre=== 'crime'  )
             },
             {
                 titles: "Feel good ",
-                data: series?.filter((item) => item.grnra=== 'feel-good'  )
+                data: series?.filter((item) => item.genre=== 'feel-good'  )
             },
         ],  
         films: [
             {
                 titles: "Drama",
-                data: films?.filter((item) => item.grnra=== 'drama') 
+                data: films?.filter((item) => item.genre=== 'drama') 
             },
             {
                 titles: "Comedies ",
-                data: films?.filter((item) => item.grnra=== 'comedies' )
+                data: films?.filter((item) => item.genre=== 'comedies' )
             },
             {
                 titles: "Thriller ",
-                data: films?.filter((item) => item.grnra=== 'thriller' )
+                data: films?.filter((item) => item.genre=== 'thriller' )
             },
             {
                 titles: " Children",
-                data: films?.filter((item) => item.grnra=== 'children' )
+                data: films?.filter((item) => item.genre=== 'children' )
             },
             {
                 titles: "Suspence ",
-                data: films?.filter((item) => item.grnra=== 'ruspence' )
+                data: films?.filter((item) => item.genre=== 'suspence' )
             },
             {
                 titles: "Romance ",
-                data: films?.filter((item) => item.grnra=== 'romance' )
+                data: films?.filter((item) => item.genre=== 'romance' )
             },
         ],
     }
