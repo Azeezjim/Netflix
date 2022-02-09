@@ -1,5 +1,5 @@
 import React, {useState, useContext, createContext} from 'react';
-import {Container, Group, Title, SubTitle, Text, Feature, FeatureTitle, FeatureText, FeatureClose, Maturity, Meta, Entities, Item, Image} from './styles/card'
+import {Container, Group, Title, SubTitle, Text, Feature, FeatureTitle, FeatureText, FeatureClose, Maturity, Content, Meta, Entities, Item, Image} from './styles/card'
 
 export const FeatureContext = createContext();
 
@@ -47,21 +47,21 @@ Card.Feature = function CardFeature ({children, catigory, ...restProps}) {
     const {showFeature, itemFeature, setShowFeature, setItemFeature} = useContext(FeatureContext  )
     return <Feature 
     {...restProps} 
-    src={`/images/${category}/${itemFeature.genre}/${itemFeature.slug}/large.jpg`}
+    src={`/images/${catigory}/${itemFeature.genre}/${itemFeature.slug}/large.jpg`}
     >
-        <COntent>
-            <FeatureTitle>{itemFeature.Title}</FeatureTitle>
-            <FeatureText>{itemFeature.Title}</FeatureText>
+        <Content>
+            <FeatureTitle>{itemFeature.title}</FeatureTitle>
+            <FeatureText>{itemFeature.descripyion}</FeatureText>
             <FeatureClose onClick={() => setShowFeature(false)}>
                 <img src="/images/icons/close.png" alt="Close" />
             </FeatureClose>
-        </COntent>
+        </Content>
         <Group margin="30 0" flexDirection="row" alignItem="center">
             <Maturity rating={itemFeature.maturity}>
-                {itemFeature.maturity < 12 ? "PG" : itemFeatur.maturity}
+            {itemFeature.maturity < 12 ? 'PG' : itemFeature.maturity}
             </Maturity>
             <FeatureText fontWeight="bold">
-                {itemFeature.genre.charAt(0).toUpperCase() = itemFeature.genre.slize(1)}
+                {itemFeature.genre.charAt(0).toUpperCase() + itemFeature.genre.slize(1)}
             </FeatureText>
         </Group>
     </Feature>
