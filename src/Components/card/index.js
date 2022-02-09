@@ -51,7 +51,7 @@ Card.Feature = function CardFeature ({children, catigory, ...restProps}) {
     >
         <Content>
             <FeatureTitle>{itemFeature.title}</FeatureTitle>
-            <FeatureText>{itemFeature.descripyion}</FeatureText>
+            <FeatureText>{itemFeature.description}</FeatureText>
             <FeatureClose onClick={() => setShowFeature(false)}>
                 <img src="/images/icons/close.png" alt="Close" />
             </FeatureClose>
