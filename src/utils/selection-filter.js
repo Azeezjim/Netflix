@@ -2,49 +2,49 @@
     return {
         series: [
             {
-                titles: "Documentaries",
+                title: "Documentaries",
                 data: series?.filter((item) => item.genre=== 'documentaries' )
             },
             {
-                titles: "Comedies ",
+                title: "Comedies ",
                 data: series?.filter((item) => item.genre=== 'comedies'  )
             },
             {
-                titles: "Children",
+                title: "Children",
                 data: series?.filter((item) => item.genre=== 'children')
             },
             {
-                titles: "Crime ",
+                title: "Crime ",
                 data: series?.filter((item) => item.genre=== 'crime'  )
             },
             {
-                titles: "Feel good ",
+                title: "Feel good ",
                 data: series?.filter((item) => item.genre=== 'feel-good'  )
             },
         ],  
         films: [
             {
-                titles: "Drama",
+                title: "Drama",
                 data: films?.filter((item) => item.genre=== 'drama') 
             },
             {
-                titles: "Comedies ",
+                title: "Comedies ",
                 data: films?.filter((item) => item.genre=== 'comedies' )
             },
             {
-                titles: "Thriller ",
+                title: "Thriller ",
                 data: films?.filter((item) => item.genre=== 'thriller' )
             },
             {
-                titles: " Children",
+                title: " Children",
                 data: films?.filter((item) => item.genre=== 'children' )
             },
             {
-                titles: "Suspence ",
+                title: "Suspence ",
                 data: films?.filter((item) => item.genre=== 'suspence' )
             },
             {
-                titles: "Romance ",
+                title: "Romance ",
                 data: films?.filter((item) => item.genre=== 'romance' )
             },
         ],
