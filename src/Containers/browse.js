@@ -82,7 +82,7 @@ export default function  BrowsContainer({ slides }) {
                 </Header>
                 <Card.Group>
                     { slideRows.map((slideItem) => (
-                    <Card key={`${category}-${slideItem.titles.toLowerCase()}`}>
+                    <Card key={`${category}-${slideItem.title.toLowerCase()}`}>
                     <Card.Title>{slideItem.title}</Card.Title>
                     <Card.Entities> 
                             {slideItem.data.map((item) => (
