@@ -94,13 +94,13 @@ export default function  BrowsContainer({ slides }) {
                                     </Card.Meta>
                                 </Card.Item>
                             ))}
-                            {/* <Card.Feature category={category}>
+                    </Card.Entities>
+                    {/* <Card.Feature category={category}>
                                 <Player>
                                     <Player.Button />
                                     <player.Vedio src="/videos/bunny.mp4" />
                                 </Player>
                             </Card.Feature> */}
-                    </Card.Entities>
                     </Card>
                 ))}
                 </Card.Group>
