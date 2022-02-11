@@ -1,5 +1,6 @@
 import React, {  useState, useContext, useEffect} from "react";
 import {SelectProfileContainer} from "./profiles";
+import {FooterContainer} from './footer'
 import { FirebaseContext } from "../context/firebase";
 import {Loading, Header, Card} from '../Components';
 import * as ROUTES from '../constances/roustes';
@@ -106,6 +107,7 @@ export default function  BrowsContainer({ slides }) {
                     </Card>
                 ))}
                 </Card.Group>
+                <FooterContainer />
         </>
                 ) : (
                 <SelectProfileContainer user=

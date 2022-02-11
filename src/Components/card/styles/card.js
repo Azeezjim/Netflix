@@ -12,10 +12,11 @@ export const Container = styled.div`
 display: flex;
 flex-direction: column;
 margin-bottom: 50px;
+box-sizing:   borderbox;
 
 > ${Title} {
 @media (max-width: 1000px) {
-    margin-left: 30px;
+    margin-left: 30px;   
 }
 }
 
@@ -49,7 +50,7 @@ display: none;
 
 export const Text = styled.p`
 margin-top: 5px;
-font-size: 10px;
+font-size: 10px;   
 color: #fff;
 margin-bottom: 0;
 user-select: none;
@@ -61,7 +62,6 @@ export const Entities = styled.div`
 display: flex;
 flex-direction: row;
 `;
-
 export const Meta = styled.div`
 display: none;
 position: absolute;
@@ -153,7 +153,7 @@ ${FeatureText} {
 }
 }
 `;
-
+ 
 export const FeatureTitle = styled(Title)`
 margin-left: 0;
 `;
