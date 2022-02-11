@@ -43,7 +43,7 @@ Card.Meta = function CardMeta ({children, ...restProps}) {
 };
 
 Card.Feature = function CardFeature ({children, catigory, ...restProps}) {
-    const {showFeature, itemFeature, setShowFeature, setItemFeature} = useContext(FeatureContext  )
+    const {showFeature, itemFeature, setShowFeature, setItemFeature} = useContext(FeatureContext)
     return showFeature ? ( <Feature 
     {...restProps} 
     src={`/images/${catigory}/${itemFeature.genre}/${itemFeature.slug}/large.jpg`}
