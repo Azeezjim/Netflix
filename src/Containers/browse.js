@@ -89,23 +89,22 @@ export default function  BrowsContainer({ slides }) {
                             {slideItem.data.map((item) => (
                                 <Card.Item key={item.docId} item={item}>
                                     <Card.Image src={`/images/${category}/${item.genre}/${item.slug}/small.jpg`}/>
-                                    
+                                    {/* <Card.Feature> */}
                                     <Card.Meta>
-                                        <Card.Feature>
-                                            <Card.SubTitle>{item.title}</Card.SubTitle>
-                                            <Card.Text>{item.description}</Card.Text>
-                                        </Card.Feature>
+                                        <Card.SubTitle>{item.title}</Card.SubTitle>
+                                        <Card.Text>{item.description}</Card.Text>
                                     </Card.Meta>
-                                    
+                                    {/* </Card.Feature> */}
                                 </Card.Item>
                             ))}
                     </Card.Entities>
-                    {/* <Card.Feature category={category}>
-                                <Player>
+                    <Card.Feature category={category}>
+                        <p>Player</p>
+                                {/* <Player>
                                     <Player.Button />
                                     <player.Vedio src="/videos/bunny.mp4" />
-                                </Player>
-                            </Card.Feature> */}
+                                </Player> */}
+                            </Card.Feature>
                     </Card>
                 ))}
                 </Card.Group>

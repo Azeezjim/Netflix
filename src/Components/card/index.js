@@ -44,6 +44,7 @@ Card.Meta = function CardMeta ({children, ...restProps}) {
 
 Card.Feature = function CardFeature ({children, catigory, ...restProps}) {
     const {showFeature, itemFeature, setShowFeature, setItemFeature} = useContext(FeatureContext)
+
     return showFeature ? ( <Feature 
     {...restProps} 
     src={`/images/${catigory}/${itemFeature.genre}/${itemFeature.slug}/large.jpg`}
@@ -57,7 +58,7 @@ Card.Feature = function CardFeature ({children, catigory, ...restProps}) {
         
         <Group margin="30 0" flexDirection="row" alignItem="center">
             <Maturity rating={itemFeature.maturity}>
-            {itemFeature.maturity < 12 ? 'PG' : itemFeature.maturity}
+                 {itemFeature.maturity < 12 ? 'PG' : itemFeature.maturity}
             </Maturity>
             <FeatureText fontWeight="bold">
                 {itemFeature.genre.charAt(0).toUpperCase() + itemFeature.genre.slice(1)}
