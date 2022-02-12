@@ -63,7 +63,7 @@ export default function  BrowsContainer({ slides }) {
                                         <Header.TextLink>{user.displayName}</Header.TextLink>
                                     </Header.Group>
                                     <Header.Group>
-                                        <Header.TextLink onClick={() => firebase.auth().signout}>
+                                        <Header.TextLink onClick={() => firebase.auth().signout()}>
                                             Sign out
                                         </Header.TextLink>
                                     </Header.Group>
