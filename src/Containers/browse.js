@@ -1,8 +1,8 @@
 import React, {  useState, useContext, useEffect} from "react";
 import {SelectProfileContainer} from "./profiles";
-import {FooterContainer} from './footer '
+import {FooterContainer} from './footer'
 import { FirebaseContext } from "../context/firebase";
-import {Loading, Header, Card} from '../Components';
+import {Loading, Header, Card, Player} from '../Components';
 import * as ROUTES from '../constances/roustes';
 import logo from '../logo.svg';
 
@@ -98,11 +98,10 @@ export default function  BrowsContainer({ slides }) {
                             ))}
                     </Card.Entities>
                     <Card.Feature category={category}>
-                        <p>Player</p>
-                                {/* <Player>
+                            <Player>
                                     <Player.Button />
-                                    <player.Vedio src="/videos/bunny.mp4" />
-                                </Player> */}
+                                    <Player.Vedio src="/videos/bunny.mp4" />
+                                </Player>
                             </Card.Feature>
                     </Card>
                 ))}

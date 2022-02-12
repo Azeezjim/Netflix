@@ -1,4 +1,4 @@
-  import React from 'react';
+import React from 'react';
 import {Container, Title, Item, List, Picture, Name} from './styles/profile';
 
 export default function Profiles ({ children, ...restProps}) {
