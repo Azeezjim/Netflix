@@ -20,7 +20,7 @@ export default function App() {
           <Browse />
         </ProtectedRoute>
         <IsUserRedirect user={user} loggedInPath={ROUTES.BROWSER} path={ROUTES.HOME} exact> 
-           <Home />
+          <Home />
         </IsUserRedirect>
         </Switch>  
     </Router>

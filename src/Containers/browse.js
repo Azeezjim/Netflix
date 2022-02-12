@@ -11,10 +11,11 @@ export default function  BrowsContainer({ slides }) {
     const [profile, setProfile] = useState({});
     const [loading, setLoading] = useState(true); 
     const [searchTerm, setSearchTerm] = useState();
-    const { firebase } = useContext(FirebaseContext);
     const [slideRows, setSlideRows ] = useState([]);
+
+    const { firebase } = useContext(FirebaseContext);
     const user = firebase.auth().currentUser || {};
-  
+
     useEffect(() => {
         setTimeout(() => {
             setLoading(false);
@@ -62,7 +63,7 @@ export default function  BrowsContainer({ slides }) {
                                         <Header.TextLink>{user.displayName}</Header.TextLink>
                                     </Header.Group>
                                     <Header.Group>
-                                        <Header.TextLink onClick={() => firebase.auth().Signout}>
+                                        <Header.TextLink onClick={() => firebase.auth().signout}>
                                             Sign out
                                         </Header.TextLink>
                                     </Header.Group>
@@ -99,8 +100,8 @@ export default function  BrowsContainer({ slides }) {
                     </Card.Entities>
                     <Card.Feature category={category}>
                             <Player>
-                                    <Player.Button />
-                                    <Player.Vedio src="/videos/bunny.mp4" />
+                                <Player.Button />
+                                    <Player.Video src="/videos/bunny.mp4" />
                                 </Player>
                             </Card.Feature>
                     </Card>
