@@ -1,6 +1,6 @@
 import React, {useState, useContext, createContext} from "react";
 import { ReactDOM } from "react-dom";
-import {Container, Button, Overlay, Inner, CLose} from './styles/player';
+import {Container, Button, Overlay, CLose, Inner} from './styles/player';
 
 export const PlayerContext = createContext();
 export default function Player ({children, ...restProps}) {
@@ -22,9 +22,9 @@ Player.Video = function PlayerVideo({src, ...restProps}) {
                 <video id="netflixPlayer" controls>
                     <source src={src} type="video/mp4" />
                 </video>
-                <CLose /> 
+                {/* <CLose /> */}
             </Inner>
-        </Overlay>
+        </Overlay>,
         document.body
     ) : null;
 }
