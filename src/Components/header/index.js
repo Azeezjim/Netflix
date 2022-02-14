@@ -34,7 +34,10 @@ Header.Search = function HeaderSearch({searchTerm, setSearchTerm, ...restProps})
       value={searchTerm} 
       onChange={({terget}) => setSearchTerm(terget.value) } 
       placeholder= 'Search film or series' 
-      active= {searchActive} />
+      active= {searchActive} 
+      data-testid="search-input"
+      />
+      
     </Search>
     
   )

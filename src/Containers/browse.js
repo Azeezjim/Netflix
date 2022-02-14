@@ -1,5 +1,6 @@
 import React, {  useState, useContext, useEffect} from "react";
 import {SelectProfileContainer} from "./profiles";
+import Fuse from "fuse.js";
 import {FooterContainer} from './footer'
 import { FirebaseContext } from "../context/firebase";
 import {Loading, Header, Card, Player} from '../Components';
@@ -10,7 +11,7 @@ export default function  BrowsContainer({ slides }) {
     const [category, setCategory] = useState('series'); 
     const [profile, setProfile] = useState({});
     const [loading, setLoading] = useState(true); 
-    const [searchTerm, setSearchTerm] = useState();
+    const [searchTerm, setSearchTerm] = useState('');
     const [slideRows, setSlideRows ] = useState([]);
 
     const { firebase } = useContext(FirebaseContext);
@@ -26,7 +27,17 @@ export default function  BrowsContainer({ slides }) {
             setSlideRows(slides[category])
             }, [slides, category]);
 
-                
+        useEffect(() => {
+            const fuse = new Fuse(slideRows, {
+                keys: ['data.description', 'data.title', 'data,genre']
+        });
+        const result = fuse.search(searchTerm).map(({item}) => item );
+
+        if (slideRows.length > 0 && searchTerm.length > 3 && result.length > 0) {
+            setSlideRows(result);
+        }
+        }, [searchTerm])
+
             
     return profile.displayName ? (
         <>
@@ -51,10 +62,8 @@ export default function  BrowsContainer({ slides }) {
                             </Header.TextLink>
                         </Header.Group>
                         <Header.Group>
-                        <Header.Search 
-                                searchTerm ={searchTerm} 
-                                setSearchTerm={setSearchTerm} 
-                            />
+                        <Header.Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+
                             <Header.Profile>
                                 <Header.Picture src={user.photoURL} />
                                 <Header.Dropdown>
